@@ -1,0 +1,1 @@
+rails generate migration CreateUsers name:string photo:string bio:string postscounter:integer
