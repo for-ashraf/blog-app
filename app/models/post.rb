@@ -4,9 +4,9 @@ class Post < ApplicationRecord
   has_many :like
 
   after_save :update_post_counter
-  
+
   def five_most_recent_comments
-    Comment.where(PostID:self).order(created_at: :desc).limit(5)
+    Comment.where(PostID: self).order(created_at: :desc).limit(5)
   end
 
   private
@@ -14,5 +14,4 @@ class Post < ApplicationRecord
   def update_post_counter
     author.increment!(:postCounter)
   end
-
 end
