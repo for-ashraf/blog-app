@@ -6,8 +6,7 @@ RSpec.describe User, type: :model do
   it { should have_many(:comments) }
 
   subject do
-    User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',
-               posts_counter: 0)
+    User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', posts_counter: 0)
   end
 
   it 'check if name validation is working with name' do
