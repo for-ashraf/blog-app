@@ -6,14 +6,17 @@ ruby '3.1.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
-group :test do
-  gem 'rspec-rails'
-end
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+
+# Add dotenv-rails to help handle database credentials.
+gem 'dotenv-rails'
+
+# linter workflows
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -67,9 +70,14 @@ group :development do
   # gem "spring"
 end
 
+# group :test do
+#   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+#   gem 'capybara'
+#   gem 'selenium-webdriver'
+#   gem 'webdrivers'
+# end
+
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 5.0'
 end
