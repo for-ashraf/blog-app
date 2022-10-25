@@ -1,1 +1,10 @@
-<h1>Here is a list of posts for a given user</h1>
+<h1>Listing Posts</h1>
+<table>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.text %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
