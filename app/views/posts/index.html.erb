@@ -1,10 +1,18 @@
-<h1>Listing Posts</h1>
-<table>
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.text %></td>
-    </tr>
+<div class='user_card'>
+  <%= image_tag @user.photo%>
+  <h1><%= @user.name%></h1>
+  <small>No. of Posts:<%= @user.posts_counter%></small>
+</div>
+<% @posts.each do |post| %>
+  <div class= 'post_card'>
+    <h3><%=link_to post.title, "/users/#{@user.id}/posts/#{post.id}"%></h3>
+    <p><%= post.text%></p>
+    <small>Comments:<%= post.comments_counter%></small>
+    <small>Likes:<%= post.likes_counter%></small>
+  </div>
+  <div class='comments_container'>
+    <% post.five_most_recent_comments_per_post.each do |comment|%>
+      <p><%= User.find(comment.user_id).name %> : <%= comment.text%></p>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<% end %>
