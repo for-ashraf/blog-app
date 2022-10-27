@@ -4,7 +4,7 @@
   <small>No of Posts:<%= @user.posts_counter%></small>
 </div>
 <p>Bio <br/><%= @user.bio%></p>
-<% @user.recent_posts.each do |post| %>
+<% @user.three_recent_posts_per_user.each do |post| %>
   <div class= 'post_card'>
     <h3><%=link_to post.title, "/users/#{@user.id}/posts/#{post.id}"%></h3>
     <p><%= post.text%></p>
@@ -12,7 +12,7 @@
     <small>Likes:<%= post.likes_counter%></small>
   </div>
 <% end %>
-<% if @user.recent_posts.size.zero? %>
+<% if @user.three_recent_posts_per_user.size.zero? %>
   <p>No posts yet!</p>
 <% else %>
   <%=link_to 'All posts', "/users/#{@user.id}/posts"%>
