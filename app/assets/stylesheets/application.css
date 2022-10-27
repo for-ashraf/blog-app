@@ -19,23 +19,29 @@
    border: 1px solid rgb(26, 24, 24);
    margin-top: 1em;
  }
- 
+
  .user_card {
    display: flex;
  }
- 
- .comments_container {
-    border: 1px solid rgb(26, 24, 24);
-    margin-bottom: 1em;
-  }
- 
- small {
-   text-align: right;
-   width: 100%;
-   margin-top: auto;
- }
 
- img {
-    height: 50px;
-    width: 50px;
-  }
+.user-image {
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+}
+
+.comments_container {
+  border: 1px solid rgb(26, 24, 24);
+  margin-bottom: 1em;
+}
+
+.small {
+  text-align: right;
+  width: 100%;
+  margin-top: auto;
+}
+
+.img {
+  height: 50px;
+  width: 50px;
+}
