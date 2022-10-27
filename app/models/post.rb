@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   after_initialize :init
 
-  belongs_to :author, class_name: 'User', counter_cache: :posts_counter
+  belongs_to :user, class_name: 'User', counter_cache: :posts_counter
   has_many :comments, counter_cache: :comments_counter
   has_many :likes, counter_cache: :likes_counter
 
