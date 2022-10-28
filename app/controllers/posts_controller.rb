@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   private
-  
+
   def post_like_params
     params.require(:post).permit(:post_id)
   end
