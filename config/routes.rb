@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get '/users/:user_id/posts/:id', to: 'posts#show'
   post '/users/1/posts', to: 'posts#create'
   post '/users/:user_id/posts/:id', to: 'comments#create'
-  post '/users/:user_id/posts/:id/like', to: 'posts#like'
+  post '/users/:user_id/posts/:id/like', to: 'likes#create'
 end

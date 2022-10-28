@@ -28,12 +28,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def like
-    post = Post.find(params[:id])
-    Like.create(post_like_params, user_like_params: current_user)
-    redirect_to "/users/:user_id/posts/#{post[:id]}"
-  end
-
   private
   
   def post_like_params
