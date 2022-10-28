@@ -6,5 +6,32 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @like = Like.new
+  end
+
+  def new
+    post = Post.new
+    respond_to do |format|
+      format.html { render :new_post, locals: { post: post } }
+    end
+  end
+
+  def create
+    
+    post = Post.new(title: params[:post][:title], text: params[:post][:text], user: current_user)
+    
+    if post.save
+      flash[:success] = 'Post saved successfully'
+      redirect_to "/users/#{current_user.id}/posts"
+    else
+      flash.now[:error] = 'Error: Post could not be saved'
+      render inline: '<p>Error: Post could not be saved<p>'
+    end
+  end
+
+  def like
+    post = Post.find(params[:id])
+    Like.create(post: post, user: current_user)
+    redirect_to "/users/:user_id/posts/#{post[:id]}"
   end
 end
