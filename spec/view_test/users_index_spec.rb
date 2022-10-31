@@ -29,6 +29,8 @@ RSpec.describe 'user_index', type: :feature do
     expect(page.current_path).to eql("/users/#{user.id}")
   end
 
-  
-
+  it 'should go to the new post form' do
+    click_link("Add Post")
+    expect(page.current_path).to eql(new_post_path)
+  end
 end
