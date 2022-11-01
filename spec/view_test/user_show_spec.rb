@@ -62,8 +62,4 @@ RSpec.describe 'user_show', type: :feature do
     expect(page.current_path).to eql("/users/#{user.id}/posts/#{post.id}")
   end
 
-
-
-  
-
 end
